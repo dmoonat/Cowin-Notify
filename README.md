@@ -19,6 +19,6 @@ SMS and Desktop Notification mechanisms for availability of vaccination slots, a
 
 		` pip install -r requirements.txt `
 
-	* To run the scripts with SMS notification ON, create a [twilio](www.twilio.com/referral/BCRLIu) account and add the required credentials in the script
+	* To run the scripts with SMS notification ON, create a [twilio](https://www.twilio.com/referral/BCRLIu) account and add the required credentials in the script
 	* Add pincode,age and contact number in the script
 
