@@ -45,36 +45,36 @@ def notify(age,pincodes,actual_dates,notification_interval,sms=False):
 				if result.ok:
 					response_json = result.json()
 
-					flag=False
+					
 					if response_json['centers']:
-						if(print_flag.lower()=='y'):
-							for center in response_json['centers']:
-								for session in center['sessions']:
-								
-									if session['min_age_limit']<=age and session['available_capacity']>0:
+						
+						for center in response_json['centers']:
+							for session in center['sessions']:
+							
+								if session['min_age_limit']<=age and session['available_capacity']>0:
 
-										if counter==0:
-											try:
-												if sms:
-													sent_sms("Vaccination slots available") 		  #sms via twilio	
-											except:
-												print('Something is wrong with Twilio')
-
+									if counter==0:
 										try:
-											s.call(['notify-send','Vaccination','Slot Available']) #Desktop notification 
+											if sms:
+												sent_sms("Vaccination slots available") 		  #sms via twilio	
 										except:
-											print("Not able to trigger desktop notification")
+											print('Something is wrong with Twilio')
+
+									try:
+										s.call(['notify-send','Vaccination','Slot Available']) #Desktop notification 
+									except:
+										print("Not able to trigger desktop notification")
 
 
-										if session['vaccine']!='':
-											print('\t Vaccine type:',session['vaccine'])
-										print('\n')
+									if session['vaccine']!='':
+										print('\t Vaccine type:',session['vaccine'])
+									print('\n')
 
-										counter+=1
-										print('Search Completed')
-										return 1
-									else:
-										pass
+									counter+=1
+									print('Search Completed')
+									return 1
+								else:
+									pass
 					else:
 						pass
 				else:
@@ -90,7 +90,7 @@ def notify(age,pincodes,actual_dates,notification_interval,sms=False):
 		dt = datetime.now() + timedelta(minutes=notification_interval)
 
 		try:
-			if datetime.now().strftime("%d-%m-%Y %H:%M") > actual_dates[0]+' 08:00':
+			if datetime.now().strftime("%d-%m-%Y %H:%M") > actual_dates[0]+' 08:00': #if current date time is greater than 8:00AM 
 				actual_dates = actual_dates[1:]
 				if len(actual_dates)==1:
 					return 0
@@ -108,7 +108,6 @@ if __name__ == "__main__":
 	num_days = 2 #including today
 	notification_interval = 1 #in minutes
 
-	print_flag = 'Y'
 
 	while True:
 		current_dt = datetime.today()
