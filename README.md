@@ -28,4 +28,4 @@ SMS and Desktop Notification mechanisms for availability of vaccination slots, a
 	![SMS notify](../main/imgs/sms.png)
 
 	* Desktop notification
-	![Desktop notify](./main/imgs/desktop.png)
+	![Desktop notify](../main/imgs/desktop.png)
