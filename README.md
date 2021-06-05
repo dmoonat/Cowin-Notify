@@ -22,3 +22,10 @@ SMS and Desktop Notification mechanisms for availability of vaccination slots, a
 	* To run the scripts with SMS notification ON, create a [twilio](https://www.twilio.com/referral/BCRLIu) account and add the required credentials in the script
 	* Add pincode,age and contact number in the script
 
+* Output
+	
+	* SMS (if sms parameter set to True)
+	![SMS notify](../main/imgs/sms.png)
+
+	* Desktop notification
+	![Desktop notify](./main/imgs/desktop.png)
