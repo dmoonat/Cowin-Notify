@@ -29,3 +29,5 @@ SMS and Desktop Notification mechanisms for availability of vaccination slots, a
 
 	* Desktop notification
 	![Desktop notify](../main/imgs/desktop.png)
+
+* Blog [link](https://www.analyticsvidhya.com/blog/2021/06/cowin-notify-c-build-notification-service-for-availability-of-vaccination-slots/)
